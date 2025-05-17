@@ -203,11 +203,11 @@ When you click on the "Copy tables" button, this sub will check if SetTableCombo
 
 ExportTable is the most important sub:
 
-It will first get the record count for the destination table into iMySqlRecCount.
-If there is data and the user had selected "Empty target table before insert", all records in the destination table will be deleted.
-If user had selected "Create target table (drop if exists), the sub will drop destination table (if it exists) and will create new destination table. GetColumnsTableAccess function will be used to get the SQL for Access and GetColumnsTableSqlServer will be used for SQL Server.
-It will first get the record count for the source table into iCount.
-Finally, it will generate the INSERT INTO statement for each source record and run it against the destination database.
+- It will first get the record count for the destination table into iMySqlRecCount.
+- If there is data and the user had selected "Empty target table before insert", all records in the destination table will be deleted.
+- If user had selected "Create target table (drop if exists), the sub will drop destination table (if it exists) and will create new destination table. GetColumnsTableAccess function will be used to get the SQL for Access and GetColumnsTableSqlServer will be used for SQL Server.
+- It will first get the record count for the source table into iCount.
+- Finally, it will generate the INSERT INTO statement for each source record and run it against the destination database.
 
 ```
 Private Sub ExportTable(ByVal sTableName As String, ByRef cn As OleDbConnection, _
